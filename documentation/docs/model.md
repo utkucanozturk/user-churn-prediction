@@ -1,6 +1,6 @@
 # Modeling
 
-Since it is unknown what are the measures for the user retention, various machine learning algorithms are compared in terms of their ability to distinguish user retention score. To be able to assess the quality of each model a 3-fold cross-validation procedure is performed. Finally the evaluation of promising algorithms will be done in [Model Evaluation](eval.md).
+Since it is unknown what are the measures for the user retention, various machine learning algorithms are compared in terms of their ability to distinguish user retention score. To be able to assess the quality of each model a 3-fold cross-validation procedure is performed. Finally the evaluation of promising algorithms will be done in [Model Evaluation](model.md#model-evaluation).
 
 ## Evaluation Metric
 
