@@ -1,0 +1,70 @@
+site_name: Customer Churn Prediction
+site_url: https://utkucanozturk.github.io/customer-churn-prediction/
+site_author: Utku Can Ozturk
+site_description: >-
+  Static site hosting documentation for customer churn prediction curated by Utku Can Ozturk.
+
+nav:
+    - Home: index.md
+    - Dataset: data.md
+    - Modeling: model.md
+    - Extras: extra.md
+
+plugins:
+  - search
+
+theme:
+      #name: superhero
+      name: material
+      icon:
+          logo: material/newspaper-minus
+      palette:
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          primary: cyan
+          toggle:
+            icon: material/weather-sunny
+            name: Switch to dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          primary: cyan
+          toggle:
+            icon: material/weather-night
+            name: Switch to light mode
+      font:
+        text: Roboto
+        code: Roboto Mono
+      features:
+        - content.code.annotate
+        - content.tabs.link
+        - navigation.instant
+        - navigation.tracking
+        - navigation.tabs
+        - navigation.top
+        - navigation.sections
+        - search.highlight
+        - search.share
+        - search.suggest
+
+copyright: 2021 - Utku Can Ozturk
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/utkucanozturk/
+    - icon: fontawesome/brands/linkedin-in
+      link: https://linkedin.com/in/utkucanozturk/
+
+markdown_extensions:
+  - def_list
+  - attr_list
+  - mdx_math
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: True
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML

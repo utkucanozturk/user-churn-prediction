@@ -1,0 +1,67 @@
+model:
+    loc: '/data/training_sets/'
+    file: 'dataset_v001.csv'
+
+meta:
+    experiment_name: "/Experiment/001"
+    
+    run_name: "Test Run"
+    
+    target: ['retentionScore']
+
+    predictors: ['add_sticker_tapped', 'app_clear_data', 'app_exception', 
+                  'app_remove', 'app_update', 'challenge_created', 'challenge_shared', 
+                  'comment_liked', 'comment_posted', 'create_new_collection_tapped', 
+                  'draft_saved', 'feed_invite_friends_tapped', 'fiam_action', 'fiam_dismiss', 
+                  'firebase_in_app_message_action', 'firebase_in_app_message_dismiss', 
+                  'firebase_in_app_message_impression', 'first_open', 'hashtag_selected', 
+                  'help_video_selected', 'invite_friends_shared', 'item_added', 
+                  'item_collection_created', 'item_collection_tooltip_tapped', 'item_removed', 
+                  'item_saved', 'notification_foreground', 'notification_open', 'os_update', 
+                  'outfit_collections_tooltip_tapped', 'outfit_liked', 'outfit_saved', 
+                  'outfit_sent', 'outfit_unliked', 'quick_add_recently_added', 
+                  'quick_add_saved_items', 'quick_add_uploaded_user_items', 
+                  'save_outfit_tooltip_tapped', 'saved_outfit_challenge_option_selected', 
+                  'saved_outfit_edited', 'saved_outfit_opened',
+                  'saved_outfit_option_selected', 'screen_view', 'search_input_tapped', 
+                  'search_tab_selected', 'sticker_image_cut', 'sticker_image_selected', 
+                  'sticker_uploaded', 'user_blocked', 'user_items_uploaded', 'user_unblocked', 'user_unfollowed']
+
+    available_predictors: ['add_sticker_tapped', 'app_clear_data', 'app_exception', 
+                            'app_remove', 'app_update', 'challenge_created', 'challenge_shared', 
+                            'comment_liked', 'comment_posted', 'create_new_collection_tapped', 
+                            'draft_saved', 'feed_invite_friends_tapped', 'fiam_action', 'fiam_dismiss', 
+                            'firebase_in_app_message_action', 'firebase_in_app_message_dismiss', 
+                            'firebase_in_app_message_impression', 'first_open', 'hashtag_selected', 
+                            'help_video_selected', 'invite_friends_shared', 'item_added', 
+                            'item_collection_created', 'item_collection_tooltip_tapped', 'item_removed', 
+                            'item_saved', 'notification_foreground', 'notification_open', 'os_update', 
+                            'outfit_collections_tooltip_tapped', 'outfit_liked', 'outfit_saved', 
+                            'outfit_sent', 'outfit_unliked', 'quick_add_recently_added', 
+                            'quick_add_saved_items', 'quick_add_uploaded_user_items', 
+                            'save_outfit_tooltip_tapped', 'saved_outfit_challenge_option_selected', 
+                            'saved_outfit_edited', 'saved_outfit_opened',
+                            'saved_outfit_option_selected', 'screen_view', 'search_input_tapped', 
+                            'search_tab_selected', 'sticker_image_cut', 'sticker_image_selected', 
+                            'sticker_uploaded', 'user_blocked', 'user_items_uploaded', 'user_unblocked', 'user_unfollowed']
+
+parameter:
+    test_size: .3
+    inner_cv: 3
+    iterations: 3
+    Random_Forest:
+        n_estimators: [50, 100, 300, 500]
+        max_depth: [5, 10, 15, 20]
+    lightgbm:
+        boosting_type: ['dart']
+        max_depth: [-1, 5, 10, 20]
+        learning_rate: [0.01, 0.05, 0.1, 0.2]
+        n_estimators: [50, 100, 200, 500]    
+    XGBoost:
+          max_depth: [3, 6, 9, 12]
+          eta: [0.05, 0.1, 0.2]
+          n_estimators: [100, 300, 500]
+    svm:
+          C: [0.1, 1, 10]
+          gamma: [0.01, 0.1, 1]
+          kernel: ['rbf']
